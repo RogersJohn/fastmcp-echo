@@ -5,6 +5,8 @@ mcp = FastMCP("echo-server", version="2025-03-26")
 @mcp.tool(description="Echo text back with optional casing tweaks")
 def echo(text: str, upper: bool = False) -> str:
     """Return the submitted text."""
+    if not isinstance(text, str):
+        raise AttributeError(f"'text' must be a string, got {type(text).__name__}")
     return text.upper() if upper else text
 
 @mcp.tool
