@@ -1,6 +1,6 @@
 from fastmcp import FastMCP
 
-mcp = FastMCP("echo-server", version="2025-03-26")
+mcp = FastMCP("echo-server", version="0.1.0")
 
 @mcp.tool(description="Echo text back with optional casing tweaks")
 def echo(text: str, upper: bool = False) -> str:
