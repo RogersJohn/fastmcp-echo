@@ -61,7 +61,7 @@ pytest -k "test_echo"    # Run tests matching pattern
 - Negative tests use `pytest.raises()` to verify proper error handling
 
 ### Error Handling
-Functions deliberately raise `AttributeError` when passed non-string types (see negative tests). This is the expected behavior - no custom validation.
+Functions raise `TypeError` when passed non-string types (see negative tests). This is implemented via explicit type validation that checks `isinstance(text, str)` and provides clear error messages indicating the expected and received types.
 
 ## Adding New Tools
 1. Define function in [server.py](server.py) with `@mcp.tool()` decorator

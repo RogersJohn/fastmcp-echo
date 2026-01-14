@@ -6,12 +6,14 @@ mcp = FastMCP("echo-server", version="2025-03-26")
 def echo(text: str, upper: bool = False) -> str:
     """Return the submitted text."""
     if not isinstance(text, str):
-        raise AttributeError(f"'text' must be a string, got {type(text).__name__}")
+        raise TypeError(f"'text' must be a string, got {type(text).__name__}")
     return text.upper() if upper else text
 
 @mcp.tool
 def word_count(text: str) -> int:
     """Count characters separated by whitespace."""
+    if not isinstance(text, str):
+        raise TypeError(f"'text' must be a string, got {type(text).__name__}")
     return len(text.split())
 
 if __name__ == "__main__":

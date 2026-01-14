@@ -72,17 +72,17 @@ class TestEcho:
     # === Negative Tests ===
     def test_echo_none_raises_error(self):
         """Test that echo raises an error when passed None."""
-        with pytest.raises(AttributeError):
+        with pytest.raises(TypeError):
             echo(None)
 
     def test_echo_integer_raises_error(self):
         """Test that echo raises an error when passed an integer."""
-        with pytest.raises(AttributeError):
+        with pytest.raises(TypeError):
             echo(123)
 
     def test_echo_list_raises_error(self):
         """Test that echo raises an error when passed a list."""
-        with pytest.raises(AttributeError):
+        with pytest.raises(TypeError):
             echo(["hello", "world"])
 
 
@@ -159,15 +159,15 @@ class TestWordCount:
     # === Negative Tests ===
     def test_word_count_none_raises_error(self):
         """Test that word_count raises an error when passed None."""
-        with pytest.raises(AttributeError):
+        with pytest.raises(TypeError):
             word_count(None)
 
     def test_word_count_integer_raises_error(self):
         """Test that word_count raises an error when passed an integer."""
-        with pytest.raises(AttributeError):
+        with pytest.raises(TypeError):
             word_count(123)
 
     def test_word_count_list_raises_error(self):
         """Test that word_count raises an error when passed a list."""
-        with pytest.raises(AttributeError):
+        with pytest.raises(TypeError):
             word_count(["hello", "world"])
